@@ -73,12 +73,12 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
   // Si une critique existe déjà pour cet utilisateur et cet ISBN, la modifier
   if (existingReviewIndex !== -1) {
     books[existingReviewIndex].review = review;
-    return res.status(200).json({ message: "Review deleted successfully" });
+    return res.status(200).json({ message: "Review modified successfully" });
   }
 
   // Sinon, ajouter une nouvelle critique
   books.push({ isbn, username, review });
-  return res.status(200).json({ message: "Review deleted successfullyjk" });
+  return res.status(200).json({ message: "Review added successfully" });
 });
 
 
